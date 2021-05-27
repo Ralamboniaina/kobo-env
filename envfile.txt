@@ -1,0 +1,33 @@
+#######################
+# Mandatory variables #
+#######################
+
+# Choose between http or https
+PUBLIC_REQUEST_SCHEME=http
+# The publicly-accessible domain where your KoBo Toolbox instance will be reached (e.g. example.com).
+PUBLIC_DOMAIN_NAME=kobo.local
+# The private domain used in docker network. Useful for communication between containers without passing through
+# a load balancer. No need to be resolved by a public DNS.
+INTERNAL_DOMAIN_NAME=docker.internal
+# The publicly-accessible subdomain for the KoBoForm form building and management interface (e.g. koboform).
+KOBOFORM_PUBLIC_SUBDOMAIN=kf
+# The publicly-accessible subdomain for the KoBoCAT data collection and project management interface (e.g.kobocat).
+KOBOCAT_PUBLIC_SUBDOMAIN=kc
+# The publicly-accessible subdomain for the Enketo Express web forms (e.g. enketo).
+ENKETO_EXPRESS_PUBLIC_SUBDOMAIN=ee
+# See "api key" here: https://github.com/kobotoolbox/enketo-express/tree/master/config#linked-form-and-data-server.
+ENKETO_API_KEY=27e9d176d90a0cb79e9f2c84b5b34aa17368cf3d6cc24c75668ee6f1d719a8568e9a8ed82e0dc521beb58b37c6a5bb47ac375878bd4d759cfc464780
+# Keep `ENKETO_API_TOKEN` for retro-compatibility with KPI and KoBoCAT. ToDo Remove when KPI and KC read correct env variable
+ENKETO_API_TOKEN=27e9d176d90a0cb79e9f2c84b5b34aa17368cf3d6cc24c75668ee6f1d719a8568e9a8ed82e0dc521beb58b37c6a5bb47ac375878bd4d759cfc464780
+# See "https://github.com/enketo/enketo-express/blob/master/setup/docker/create_config.py#L14
+ENKETO_ENCRYPTION_KEY=77df47ac1d436158a863469b0d65518081a082822712eb97bf1df5453ee1812cbb00ef6f6b6b46b902723fb73bfc9b153f1c8dc6f7eb909edbfa8c69
+# Canonically a 50-character random string. For Django 1.8.13, see https://docs.djangoproject.com/en/1.8/ref/settings/#secret-key and https://github.com/django/django/blob/4022b2c306e88a4ab7f80507e736ce7ac7d01186/django/core/management/commands/startproject.py#L29-L31.
+# To generate a secret key in the same way as `django-admin startproject` you can run:
+# docker-compose run --rm kpi python -c 'from django.utils.crypto import get_random_string; print(get_random_string(50, "abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)"))'
+DJANGO_SECRET_KEY=7bc58abb00d76f2608ca4d74d5a2821f75d99b88da8e5109d5cbe60723c93fb415ce40dfdb21632fe80005e1c5dd4f3df62d
+# The initial superuser's username.
+KOBO_SUPERUSER_USERNAME=super_admin
+# The initial superuser's password.
+KOBO_SUPERUSER_PASSWORD=E,`d<]'g1g%h
+# The e-mail address where your users can contact you.
+KOBO_SUPPORT_EMAIL=support@kobo.local

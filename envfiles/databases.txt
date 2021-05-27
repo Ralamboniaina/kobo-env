@@ -1,0 +1,57 @@
+#--------------------------------------------------------------------------------
+# MONGO
+#--------------------------------------------------------------------------------
+# These `KOBO_MONGO_` settings only affect the mongo container itself and the
+# `wait_for_mongo.bash` init script that runs within the kpi and kobocat.
+# Please see kobocat.txt to set container variables
+KOBO_MONGO_PORT=27017
+KOBO_MONGO_HOST=mongo.kobo.private
+MONGO_INITDB_ROOT_USERNAME=root
+MONGO_INITDB_ROOT_PASSWORD=d<u'+nVdE8}w
+MONGO_INITDB_DATABASE=formhub
+KOBO_MONGO_USERNAME=kobo
+KOBO_MONGO_PASSWORD=`3%b'v239_kA
+
+# Default MongoDB backup schedule is weekly at 01:00 AM UTC on Sunday.
+#MONGO_BACKUP_SCHEDULE=0 1 * * 0
+
+#--------------------------------------------------------------------------------
+# POSTGRES
+#--------------------------------------------------------------------------------
+
+# These `KOBO_POSTGRES_` settings only affect the postgres container itself and the
+# `wait_for_postgres.bash` init script that runs within the kpi and kobocat
+# containers. To control Django database connections, please see the
+# `DATABASE_URL` environment variable.
+POSTGRES_PORT=5432
+POSTGRES_HOST=postgres.kobo.private
+POSTGRES_USER=kobo
+POSTGRES_PASSWORD=.k(u.(gB^{c!
+KC_POSTGRES_DB=kobocat
+KPI_POSTGRES_DB=koboform
+
+# Postgres database used by kpi and kobocat Django apps
+KC_DATABASE_URL=postgis://kobo:.k%28u.%28gB%5E%7Bc%21@postgres.kobo.private:5432/kobocat
+KPI_DATABASE_URL=postgis://kobo:.k%28u.%28gB%5E%7Bc%21@postgres.kobo.private:5432/koboform
+
+# Replication
+KOBO_POSTGRES_REPLICATION_USER=kobo_replication
+KOBO_POSTGRES_REPLICATION_PASSWORD=vzYXl2QQA4o-
+KOBO_POSTGRES_PRIMARY_ENDPOINT=primary.postgres.kobo.private
+
+# Default Postgres backup schedule is weekly at 02:00 AM UTC on Sunday.
+#POSTGRES_BACKUP_SCHEDULE=0 2 * * 0
+
+# WAL-E archiving and backup support
+#USE_WAL_E=1
+
+#--------------------------------------------------------------------------------
+# REDIS
+#--------------------------------------------------------------------------------
+
+# Default Redis backup schedule is weekly at 03:00 AM UTC on Sunday.
+#REDIS_BACKUP_SCHEDULE=0 3 * * 0
+
+REDIS_SESSION_URL=redis://:d%60jEcf%5E.r%21z3@redis-cache.kobo.private:6380/2
+REDIS_LOCK_URL=redis://:d%60jEcf%5E.r%21z3@redis-cache.kobo.private:6380/3
+REDIS_PASSWORD=d`jEcf^.r!z3
