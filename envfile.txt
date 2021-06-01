@@ -1,6 +1,6 @@
-#######################
-# Mandatory variables #
-#######################
+#########################
+#  Mandatory variables  #
+#########################
 
 # Choose between http or https
 PUBLIC_REQUEST_SCHEME=http
